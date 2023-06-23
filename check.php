@@ -9,3 +9,10 @@ $mod = $final % 11;
 if($mod<2 and $mod==$arr[9]){
     echo "ok";
 }
+elseif ($mod>=2 and 11-$mod==$arr[9]){
+    echo "ok";
+}
+else{
+    echo "not ok";
+}
+?>
