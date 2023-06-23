@@ -1,13 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>NationalCode</title>
-</head>
-<body>
-<form action="check.php" method="post">
-    National Code : <input type="text" name="national_code" id="">
-    <input type="submit" value="check">
-</form>
-</body>
-</html>
+
+<?php
+$final = 0;
+for ($i=10 ; $i>1 ; --$i){
+    $arr = str_split($_POST['national_code']);
+    $result = @arr[10-$i]*$i;
+    $final = $final+$result;
+}
+$mod = $final % 11;
+if($mod<2 and $mod==$arr[9]){
+    echo "ok";
+}
+elseif ($mod>=2 and 11-$mod==$arr[9]){
+    echo "ok";
+}
+else{
+    echo "not ok";
+}
+?>
+
